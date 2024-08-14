@@ -6,13 +6,8 @@ genai.configure(api_key=GOOGLE_API_KEY)
 model = genai.GenerativeModel("gemini-1.0-pro-latest")
 
 def generate_text(prompt):
-  try:
     response = model.generate_content(prompt)
     return response.text
-  except Exception as e:
-    print(f"An error occurred: {e}")
-    return None
-
 while True:
   user_input = input("Ask Gemini: ")
   if user_input.lower() == "exit":
